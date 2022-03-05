@@ -1,12 +1,14 @@
 # FMG-based Action Recognition
-### Official Implementation of '[Optimization of Forcemyography Sensor Placement for Arm Movement Recognition]()'
+### [Official] '[Optimization of Forcemyography Sensor Placement for Arm Movement Recognition]()'
 
 <!-- ![teaser](https://github.com/pipixin321/FMG-based-Action-Recognition/blob/main/fig/teaser_new.png) -->
 <img src="https://github.com/pipixin321/FMG-based-Action-Recognition/blob/main/fig/teaser_new.png" width="150"> <img src="https://github.com/pipixin321/FMG-based-Action-Recognition/blob/main/fig/FMG-GCN-new.png" width="500"/>
 >**Optimization of Forcemyography Sensor Placement for Arm Movement Recognition**<br>
 >Xiaohao Xu, Zihao Du, Huaxin Zhang, Ruichao Zhang,
 Zihan Hong, Qin Huang, and Bin Han∗, Member, IEEE
->
+
+>(In submission)
+
 >**Abstract:**  *How to design an optimal wearable device for human movement recognition is vital to reliable and accurate human-machine collaboration. Previous works mainly fabricate wearable devices heuristically. Instead, this paper raises an academic question:can we design an optimization algorithm to optimize the fabrication of wearable devices such as figuring out the best sensor arrangement automatically? Specifically, this work focuses on optimizing the placement of Forcemyography (FMG) sensors for FMG armbands in application of arm movement recognition. Firstly, the armband is modeled based on graph theory with both sensor signals and connectivity of sensors considered. Then, a Graph-based Armband Modeling Network(GAM-Net) is introduced for arm movement recognition. Afterward, the sensor placement optimization for FMG armbands is formulated and an optimization algorithm with greedy local search is proposed. To study the effectiveness of our optimization algorithm, a dataset for mechanical maintenance tasks using FMG armbands with 16 sensors is collected. Our experiments show that a comparable recognition accuracy with all sensors can be 
 maintained even with 4 sensors optimized with our algorithm. Finally, the optimized sensor placement result is verified from a physiological view. This work would like to shed light on the automatic fabrication of wearable devices with downstream tasks, like human biological signal collection and movement recognition, considered.*
 
@@ -20,11 +22,10 @@ maintained even with 4 sensors optimized with our algorithm. Finally, the optimi
 You can set up the environments by using `$ pip3 install -r requirements.txt`.
 
 ### Data Preparation
-1. Download our self-collected FMG dataset on mechanical mainte-
-nance tasks:https://pan.baidu.com/s/1NYCBs1VkBx20i-INAJZZ2w password:sga8.
+1. Download our self-collected FMG dataset on mechanical maintenance tasks:https://pan.baidu.com/s/1NYCBs1VkBx20i-INAJZZ2w password:sga8.
 
 2. Place the `original_data_new` inside the working folder.
-- ensure the data structure is as below.
+- ensure the data structure is as follows.
 ~~~~
 |-original_data_new
     |-dzh
@@ -45,21 +46,21 @@ python data_preprocess.py
 - After preprocessing,`window_data_new` will be created.
 
 ## Usage
-### Train model
-- For comparison with our GAM-Net, three widely-used strong action recognition models, including Long short-term memory (LSTM), Artificial Neural Network (ANN), and Convolutional Neural Network, were employed. You can easily train and evaluate the model by running the script below.
+### Training of Recognition Model
+- For comparison with our **GAM-Net**, three widely-used strong action recognition models, including Long short-term memory (LSTM), Artificial Neural Network (ANN), and Convolutional Neural Network, were employed. You can easily train and evaluate the model by running the script below.
 ```python
 python main.py
 ```
-- Before train the model,you can change model_name and subject_index to decide which model to train and which subject's data to use. 
+- Before train the model, you can change model_name and subject_index to decide which model to train and which subject's data to use. 
 
-### Sensor placement optimization
-You can run the script below to run the Sensor placement optimization algorithm.
+### Sensor Placement Optimization Algorithm
+You can run the script below to run the Sensor Placement Optimization algorithm.
 ```python
 python SPO.py
 ```
 
-### Result visualize and analysis
-you can run the script below to visualize all of the above results.
+### Result Visualization and Analysis
+You can run the script below to visualize all of the above results.
 ```python
 python result_visualize.py
 ```
@@ -70,4 +71,4 @@ If you find this code useful, please cite our paper.
 
 
 ## Contact
-If you have any question or comment, please contact the first author of the paper - XiaoHao XU(u201810644@hust.edu.com).
+If you have any question, feel free to report a issue in this repo or directly contact the author _Xiaohao XU_(xxh11102019@outlook.com).
